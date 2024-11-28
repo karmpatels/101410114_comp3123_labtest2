@@ -31,7 +31,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <h1>Weather Forecast</h1>
-        <div className="search-container">
+        <div className="search-container">   
           <input
             type="text"
             placeholder="Enter city name"
@@ -46,7 +46,7 @@ const App = () => {
             <div className="current-weather">
               <div className="details">
                 <h2>
-                  {weatherData.city.name}, {weatherData.city.country} 
+                  {weatherData.city.name}, {weatherData.city.country}
                 </h2>
                 <p>{new Date(weatherData.list[0].dt_txt).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</p>
                 <p>{weatherData.list[0].weather[0].description}</p>
@@ -62,7 +62,7 @@ const App = () => {
                   <div className="forecast-day" key={index}>
                     <p>{new Date(day.dt_txt).toLocaleDateString('en-US', { weekday: 'short' })}</p>
                     <img
-                      src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
+                      src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} // Fething icons from Web URL
                       alt={day.weather[0].description}
                     />
                     <p>{day.weather[0].description}</p>
